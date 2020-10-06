@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
 Description: Description
-Version: 1.0.4
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: gacr
@@ -53,4 +53,31 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	width: auto;
 	z-index: 100000;
 	/* Above WP toolbar. */
+}
+
+footer {
+	display: flex;
+	height: auto;
+	padding: 30px 0;
+	align-items: center;
+	flex-direction: column;
+}
+
+footer div {
+	display: block;
+	text-align: left;
+}
+
+@media only screen and (min-width: 499px) {
+	.mailpoet_form_columns {
+		flex-wrap: nowrap !important;
+	}
+
+	.mailpoet_form_tight_container div.mailpoet_email_column {
+		flex-basis: 66.6% !important;
+	}
+
+	.mailpoet_form_tight_container div.mailpoet_button_column {
+		flex-basis: 33.33% !important;
+	}
 }

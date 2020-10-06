@@ -42,8 +42,6 @@
                 <a href="http://www.twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink()) ?>&text=<?php echo urlencode(single_post_title()) ?>" class="iconSocial iconTwitter" target="_blank"
                    onclick="window.open(this.href,'','scrollbars=1,resizable=1,width=400,height=620');return false;"></a>
 
-                <a href="//plus.google.com/share?url=<?php echo urlencode(get_permalink()) ?>" class="iconSocial iconGoogle" target="_blank"
-                   onclick="window.open(this.href,'','scrollbars=1,resizable=1,width=400,height=620');return false;"></a>
             </div>
         </div>
 
@@ -72,7 +70,6 @@
     <!--</div>-->
 
     <div class="articleFooter">
-        <?php if ( 'post' === get_post_type() ) : ?> <span class="articleAuthor">Autor: <?php gacr_posted_by_edited() ?></span> <?php endif; ?>
         <div class="btnFullWidth -textCenter">
             <div class="articleSocial">
                 <a href="//www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()) ?>" class="iconSocial iconFacebook"
@@ -86,8 +83,6 @@
                 <a href="http://www.twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink()) ?>&text=<?php echo urlencode(single_post_title()) ?>" class="iconSocial iconTwitter" target="_blank"
                    onclick="window.open(this.href,'','scrollbars=1,resizable=1,width=400,height=620');return false;"></a>
 
-                <a href="//plus.google.com/share?url=<?php echo urlencode(get_permalink()) ?>" class="iconSocial iconGoogle" target="_blank"
-                   onclick="window.open(this.href,'','scrollbars=1,resizable=1,width=400,height=620');return false;"></a>
             </div>
         </div>
     </div>
