@@ -130,53 +130,6 @@ $projekty = new WP_Query(array(
 ));
 ?>
     <section class="sectionProjects">
-        <?php if ($projekty->have_posts()) : ?>
-        <div class="content -textCenter">
-            <?php if (!empty($nazev_main)) : ?>
-                <h2> <?php echo $nazev_main; ?></h2>
-            <?php endif; ?>
-
-            <div class="projectFlex">
-
-
-                <?php if ($projekty->have_posts()) : ?>
-                    <?php while ($projekty->have_posts()) : $projekty->the_post(); ?>
-
-                        <a class="project" href="<?php the_permalink() ?>">
-
-                                <div class="row">
-                                    <div class="projectHeader">
-                                        <div class="projectBg" <?php if (has_post_thumbnail()) {
-                                            echo "style=\"background-image: url('", the_post_thumbnail_url(), "')\"";
-                                        } else {
-                                            echo "";
-                                        } ?>></div>
-                                    </div>
-                                    <div class="projectBody">
-                                        <div class="projectText -small">
-                                            <p><?php the_title(); ?></p>
-                                        </div>
-                                        <div class="projectButton">
-                                            <span class="btn -white"><?php echo gacr_translate__('VÍCE INFORMACÍ'); ?></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                        </a>
-                    <?php endwhile; ?>
-                    <?php wp_reset_postdata(); ?>
-
-                <?php else : ?>
-                    <p><?php __('No News'); ?></p>
-                <?php endif; ?>
-            </div>
-
-            <?php if (!empty($tlacitko_main)) : ?>
-                <a href="<?php echo $tlacitko_main; ?>" class="btn -bigMargin"><?php echo gacr_translate__('ZOBRAZIT DALŠÍ PROJEKTY'); ?></a>
-            <?php endif; ?>
-
-        </div>
-        <?php endif; ?>
 
 <?php
 // the query
@@ -283,6 +236,55 @@ $basicResearch = new WP_Query(array(
     </div>
     </div>
 <?php endif; ?>
+
+        <?php if ($projekty->have_posts()) : ?>
+            <div class="content -textCenter">
+                <?php if (!empty($nazev_main)) : ?>
+                    <h2> <?php echo $nazev_main; ?></h2>
+                <?php endif; ?>
+
+                <div class="projectFlex">
+
+
+                    <?php if ($projekty->have_posts()) : ?>
+                        <?php while ($projekty->have_posts()) : $projekty->the_post(); ?>
+
+                            <a class="project" href="<?php the_permalink() ?>">
+
+                                <div class="row">
+                                    <div class="projectHeader">
+                                        <div class="projectBg" <?php if (has_post_thumbnail()) {
+                                            echo "style=\"background-image: url('", the_post_thumbnail_url(), "')\"";
+                                        } else {
+                                            echo "";
+                                        } ?>></div>
+                                    </div>
+                                    <div class="projectBody">
+                                        <div class="projectText -small">
+                                            <p><?php the_title(); ?></p>
+                                        </div>
+                                        <div class="projectButton">
+                                            <span class="btn -white"><?php echo gacr_translate__('VÍCE INFORMACÍ'); ?></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </a>
+                        <?php endwhile; ?>
+                        <?php wp_reset_postdata(); ?>
+
+                    <?php else : ?>
+                        <p><?php __('No News'); ?></p>
+                    <?php endif; ?>
+                </div>
+
+                <?php if (!empty($tlacitko_main)) : ?>
+                    <a href="<?php echo $tlacitko_main; ?>" class="btn -bigMargin"><?php echo gacr_translate__('ZOBRAZIT DALŠÍ PROJEKTY'); ?></a>
+                <?php endif; ?>
+
+            </div>
+        <?php endif; ?>
+
     </section>
 
 <?php if ($y_zobrazovat_youtube) : ?>
