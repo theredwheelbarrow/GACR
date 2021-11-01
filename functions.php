@@ -1,10 +1,6 @@
 <?php
 /**
- * gacr functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package gacr
+
  */
 
 if ( ! function_exists( 'gacr_setup' ) ) :
